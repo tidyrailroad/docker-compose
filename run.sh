@@ -19,5 +19,4 @@ apk update &&
     apk add --no-cache docker &&
     apk add --no-cache py-pip &&
     pip install docker-compose &&
-    apk del py-pip &&
     rm -f /var/cache/apk/*
