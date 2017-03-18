@@ -13,8 +13,8 @@
 #
 #   You should have received a copy of the GNU General Public License
 #   along with docker-composer.  If not, see <http://www.gnu.org/licenses/>.
-FROM alpine:3.4
+FROM fedora:25
 COPY run.sh /opt/docker/
-RUN ["/bin/sh", "/opt/docker/run.sh"]
+RUN ["/usr/bin/sh", "/opt/docker/run.sh"]
 ENTRYPOINT ["/usr/bin/docker-compose"]
 CMD []

@@ -14,9 +14,9 @@
 #   You should have received a copy of the GNU General Public License
 #   along with docker-composer.  If not, see <http://www.gnu.org/licenses/>.
 
-apk update &&
-    apk upgrade &&
-    apk add --no-cache docker &&
-    apk add --no-cache py-pip &&
-    pip install docker-compose &&
-    rm -f /var/cache/apk/*
+dnf update --assumeyes &&
+    dnf install --assumeyes dnf-plugins-core &&
+    dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo &&
+    dnf makecache --assumeyes fast &&
+    dnf install --assumeyes docker-ce-17.03.0.ce-1.fc25 &&
+    dnf install --assumeyes docker-compose
